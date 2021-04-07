@@ -123,6 +123,10 @@ function drawCourtWithZones(courtNum, player) {
 function getZoneFillColor(zone, percentage, attempts) {
     let alpha = attempts/200;
 
+    if (zone == 4 || zone == 5) {
+        alpha *= 2;
+    }
+
     let color1 = "rgba(49,54,149,"+alpha+")";
     let color2 = "rgba(69,117,180,"+alpha+")";
     let color3 = "rgba(116,173,209,"+alpha+")";
