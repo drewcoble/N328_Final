@@ -1,0 +1,63 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/bg-image.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.courts-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.court-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: black; */
+}
+
+/* styles for svg and content */
+
+rect,
+circle,
+path,
+line {
+  stroke: white;
+  stroke-width: 2px;
+}
+
+text {
+  font-family: Arial;
+  font-size: 15px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
+.tick text {
+  fill: black;
+  font-size: 11px;
+}
+#main {
+  border: 3px inset #c3c3d3;
+  border-radius: 8px;
+  background-color: #efefff;
+}
+rect {
+  /* stroke: white; */
+}
