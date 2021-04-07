@@ -36,7 +36,7 @@ var playerSelectTwo = document.getElementById("player-select-two");
 //         // drawScatterPlot();
 // });
 
-d3.csv('data/data_zone.csv', function(data) {
+d3.csv('/data/data_zone.csv', function(data) {
         for (let i=0; i<data.length; i++){
             // console.log(data[i]);
             let playerRow = data[i];
