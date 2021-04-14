@@ -19,54 +19,150 @@
     
 
     <div class="content-wrapper">
-        <div class="courts-wrapper">
-            <div class="court-div" id="court-one">
-                <select name="player-select-one" id="player-select-one" onchange="displayPlayer(1,value)">
-                    <option>Select a player</option>
-                </select>
-                <svg id="zones-court-one" width="470" height="500">
-                    <!-- whole court rectangle -->
-                    <rect width="100%" height="100%" fill="none" />
 
-                    <!-- above the break 3pt zone -->
-                    <path id="zone107" d="M138.97 500 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 138.97 0 L 470 0 L 470 500 Z" fill="none" />
-                
-                    <!-- half court circle -->
-                    <circle cx="100%" cy="50%" r="12%" fill="none" />
-                
-                
-                    <!-- 3-point arc -->
-                    <path id="zone103"
-                        d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
-                        fill="none" />
-                
-                    <!-- right corner 3   -->
-                    <rect id="zone105" y="0" width="140" height="6%" fill="none" />
-                
-                    <!-- left corner 3   -->
-                    <rect id="zone104" y="94%" width="140" height="6%" fill="none" />
-                
-                    <!-- paint area (old) -->
-                    <!-- <rect id="zone102" y="170" width="190" height="160" fill="none" /> -->
-                
-                    <!-- paint area -->
-                    <path id="zone102" d="M 0 330 L 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210 L 0 170 L 190 170 L 190 330 Z"
-                        fill="none" />
+        <select name="player-select-one" id="player-select-one" onchange="displayPlayer(1,value)">
+            <option>Select a player</option>
+        </select>
+        <select name="player-select-two" id="player-select-two" onchange="displayPlayer(2,value)">
+            <option>Select a player</option>
+        </select>
+
+        <!-- START drawing of courts -->
+        <div class="courts-wrapper z-courts">
+
+            <!-- START courts for player 1 (LEFT SIDE) -->
+            <div class="left-courts">
+                <div class="court-div" id="court-one">
                     
+                    <svg id="zones-court-one" width="470" height="500">
+
+                        <!-- START shooting zones -->   
+                            <!-- above the break 3pt zone -->
+                            <path id="zone107" d="M140 500 L 140 470 A 237.5 237.5 0 0 0 140 30 L 140 0 L 470 0 L 470 500 Z"
+                                fill="none" />
+                            
+                            <!-- 3-point arc -->
+                            <path id="zone103" class="court-line"
+                                d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
+                                fill="none" />
+                            
+                            <!-- right corner 3   -->
+                            <rect id="zone105" y="0" width="140" height="6%" fill="none" />
+                            
+                            <!-- left corner 3   -->
+                            <rect id="zone104" y="94%" width="140" height="6%" fill="none" />
+
+                            <!-- paint area -->
+                            <path id="zone102" d="M 0 330 L 0 290 L 49 290 A 40 40 0 0 0 49 210 L 0 210 L 0 170 L 190 170 L 190 330 Z"
+                                fill="none" />
+
+                            <!-- restricted area -->
+                            <path id="zone101" d="M 0 290 L 49 290 A 40 40 0 0 0 49 210 L 0 210" fill="none" />
+                        <!-- END shooting zones -->
+
+                        <!-- START court layout -->
+                            <!-- whole court rectangle -->
+                            <rect class="court-line" width="100%" height="100%" fill="none" />
+
+                            <!-- half court circle -->
+                            <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" />
+
+                            <!-- paint area -->
+                            <path class="court-line" d="M 0 170 L 190 170 L 190 330 L 0 330"
+                                fill="none" />
+
+                            <!-- restricted area -->
+                            <path class="court-line" d="M 49 290 A 40 40 0 0 0 49 210" fill="none" />
+
+                            <!-- free throw circle -->
+                            <path class="court-line" d="M 190 190 A 60 60 0 0 0 190 310" fill="none" stroke-dasharray="10,10" />
+                            <path class="court-line" d="M 190 310 A 60 60 0 0 0 190 190" fill="none" />
+
+                            <!-- backboard and rim -->
+                            <line class="court-line" x1="40" y1="220" x2="40" y2="280" />
+                            <circle class="court-line" cx="49" cy="250" r="9" fill="none" />
+                        <!-- END court layout -->
+
+                    </svg>
+                </div>
+                <div class="court-div" id="court-three" style="display: none">
                 
-                    <!-- restricted area -->
-                    <path id="zone101" d="M 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210" fill="none" />
+                    <svg id="distances-court-three" width="470" height="500">
                 
-                    <!-- free throw circle -->
-                    <path d="M 190 190 A 60 60 0 0 0 190 310" fill="none" stroke="rgba(255,255,255,0.75)" stroke-dasharray="10,10" />
-                    <path d="M 190 310 A 60 60 0 0 0 190 190" fill="none" stroke="rgba(255,255,255,0.75)" />
-                    
-                    <!-- board and rim -->
-                    <line x1="30" y1="220" x2="30" y2="280" stroke="rgba(255,255,255,0.75)" />
-                    <circle cx="39" cy="250" r="9" fill="none" stroke="rgba(255,255,255,0.75)" /> 
-                </svg>
+                        <defs>
+                            <mask id="maskZ02">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="50" fill="black"></circle>
+                            </mask>
+                            <mask id="maskZ03">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="100" fill="black"></circle>
+                            </mask>
+                            <mask id="maskZ04">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="150" fill="black"></circle>
+                            </mask>
+                            <mask id="maskZ05">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="200" fill="black"></circle>
+                            </mask>
+                            <mask id="maskZ06">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="250" fill="black"></circle>
+                            </mask>
+                        </defs>
+                
+                        <!-- START DISTANCE CIRCLE OVERLAYS -->
+                
+                        <rect id="zone306" width="100%" height="100%" fill="none" mask="url(#maskZ06)" />
+                
+                        <circle id="zone305" class="d-zone" cx="10.426%" cy="50%" r="250" mask="url(#maskZ05)" fill="none"></circle>
+                
+                        <circle id="zone304" class="d-zone" cx="10.426%" cy="50%" r="200" mask="url(#maskZ04)" fill="none"></circle>
+                
+                        <circle id="zone303" class="d-zone" cx="10.426%" cy="50%" r="150" mask="url(#maskZ03)" fill="none"></circle>
+                
+                        <circle id="zone302" class="d-zone" cx="10.426%" cy="50%" r="100" mask="url(#maskZ02)" fill="none">
+                        </circle>
+                
+                        <circle id="zone301" class="d-zone" cx="10.426%" cy="50%" r="50" fill="none"></circle>
+                
+                        <!-- END DISTANCE CIRCLES -->
+                
+                
+                        <!-- whole court rectangle -->
+                        <rect class="court-line" width="100%" height="100%" fill="none" />
+                
+                        <!-- half court circle -->
+                        <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" />
+                
+                        <!-- 3-point arc -->
+                        <path class="court-line"
+                            d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
+                            fill="none" />
+                
+                        <!-- paint area  (old) -->
+                        <rect class="court-line" y="170" width="190" height="160" fill="none" />
+                
+                        <!-- paint area -->
+                        <!-- <path id="zone202" d="M 0 330 L 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210 L 0 170 L 190 170 L 190 330 Z"
+                                                        fill="none" /> -->
+                
+                        <!-- restricted area  -->
+                        <path class="court-line" d="M 49 290 A 40 40 0 0 0 49 210" fill="none" />
+                
+                
+                        <!-- free throw circle -->
+                        <path class="court-line" d="M 190 190 A 60 60 0 0 0 190 310" fill="none" stroke-dasharray="10,10" />
+                        <path class="court-line" d="M 190 310 A 60 60 0 0 0 190 190" fill="none" />
+                
+                        <!-- board and rim -->
+                        <line class="court-line" x1="40" y1="220" x2="40" y2="280" />
+                        <circle class="court-line" cx="49" cy="250" r="9" fill="none" />
+                    </svg>
+                </div>
             </div>
-
+        
             <div class="heat-key">
                 <h3>Hot</h3>
                 <div class="key-color" style="background-color: rgb(165,0,38)"></div>
@@ -77,56 +173,136 @@
                 <div class="key-color" style="background-color:rgb(49,54,149)"></div>
                 <h3>Cold</h3>
             </div>
-
-            <div class="court-div" id="court-two">
-                <select name="player-select-two" id="player-select-two" onchange="displayPlayer(2,value)">
-                    <option>Select a player</option>
-                </select>
-                <svg id="zones-court-two" width="470" height="500">
-                    <!-- whole court rectangle -->
-                    <rect width="100%" height="100%" fill="none" />
-
-                    <!-- above the break 3pt zone -->
-                    <path id="zone207" d="M138.97 500 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 138.97 0 L 470 0 L 470 500 Z" fill="none" />
+        
+            <!-- START courts for player 2 (RIGHT SIDE) -->
+            <div class="right-courts">
+                <div class="court-div" id="court-two">
+                    
+                    <svg id="zones-court-two" width="470" height="500">
+                        <!-- whole court rectangle -->
+                        <rect class="court-line" width="100%" height="100%" fill="none" />
             
-                    <!-- half court circle -->
-                    <circle cx="100%" cy="50%" r="12%" fill="none" stroke="rgba(255,255,255,0.75)" />
+                        <!-- above the break 3pt zone -->
+                        <path id="zone207"
+                            d="M138.97 500 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 138.97 0 L 470 0 L 470 500 Z"
+                            fill="none" />
+            
+                        <!-- half court circle -->
+                        <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none"/>
             
             
-                    <!-- 3-point arc -->
-                    <path id="zone203" d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z" fill="none" />
+                        <!-- 3-point arc -->
+                        <path id="zone203" class="court-line"
+                            d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
+                            fill="none" />
             
-                    <!-- right corner 3   -->
-                    <rect id="zone205" y="0" width="140" height="6%" fill="none" />
+                        <!-- right corner 3   -->
+                        <rect id="zone205" y="0" width="140" height="6%" fill="none" />
             
-                    <!-- left corner 3   -->
-                    <rect id="zone204" y="94%" width="140" height="6%" fill="none" />
+                        <!-- left corner 3   -->
+                        <rect id="zone204" y="94%" width="140" height="6%" fill="none" />
             
-                    <!-- paint area  (old) -->
-                    <!-- <rect id="zone202" y="170" width="190" height="160" fill="none" /> -->
+                        <!-- paint area  (old) -->
+                        <!-- <rect id="zone202" y="170" width="190" height="160" fill="none" /> -->
             
-                    <!-- paint area -->
-                    <path id="zone202" d="M 0 330 L 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210 L 0 170 L 190 170 L 190 330 Z" fill="none" />
+                        <!-- paint area -->
+                        <path id="zone202" d="M 0 330 L 0 290 L 49 290 A 40 40 0 0 0 49 210 L 0 210 L 0 170 L 190 170 L 190 330 Z"
+                            fill="none" />
             
-                    <!-- restricted area -->
-                    <path id="zone201" d="M 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210" fill="none" />
+                        <!-- restricted area -->
+                        <path id="zone201" d="M 0 290 L 49 290 A 40 40 0 0 0 49 210 L 0 210" fill="none" />
+                        
+                        <path class="court-line" d="M 49 290 A 40 40 0 0 0 49 210" fill="none" />
             
-                    <!-- free throw circle -->
-                    <path d="M 190 190 A 60 60 0 0 0 190 310" fill="none" stroke="rgba(255,255,255,0.75)"
-                        stroke-dasharray="10,10" />
-                    <path d="M 190 310 A 60 60 0 0 0 190 190" fill="none" stroke="rgba(255,255,255,0.75)" />
+                        <!-- free throw circle -->
+                        <path  class="court-line" d="M 190 190 A 60 60 0 0 0 190 310" fill="none"
+                            stroke-dasharray="10,10" />
+                        <path class="court-line" d="M 190 310 A 60 60 0 0 0 190 190" fill="none" />
             
-                    <!-- board and rim -->
-                    <line x1="30" y1="220" x2="30" y2="280" stroke="rgba(255,255,255,0.75)" />
-                    <circle cx="39" cy="250" r="9" fill="none" stroke="rgba(255,255,255,0.75)" />
-                </svg>
+                        <!-- board and rim -->
+                        <line x1="40" y1="220" x2="40" y2="280" class="court-line"/>
+                        <circle cx="49" cy="250" r="9" fill="none" class="court-line"/>
+                    </svg>
+                </div>
+                <div class="court-div" id="court-four" style="display: none">
+                
+                    <svg id="distances-court-four" width="470" height="500">
+                
+                        <defs>
+                            <mask id="maskZ02">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="50" fill="black"></circle>
+                            </mask>
+                            <mask id="maskZ03">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="100" fill="black"></circle>
+                            </mask>
+                            <mask id="maskZ04">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="150" fill="black"></circle>
+                            </mask>
+                            <mask id="maskZ05">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="200" fill="black"></circle>
+                            </mask>
+                            <mask id="maskZ06">
+                                <rect width="100%" height="100%" fill="white"></rect>
+                                <circle cx="10.426%" cy="50%" r="250" fill="black"></circle>
+                            </mask>
+                        </defs>
+                
+                        <!-- START DISTANCE CIRCLE OVERLAYS -->
+                
+                        <rect id="zone406" width="100%" height="100%" fill="none" mask="url(#maskZ06)" />
+                
+                        <circle id="zone405" class="d-zone" cx="10.426%" cy="50%" r="250" mask="url(#maskZ05)" fill="none"></circle>
+                
+                        <circle id="zone404" class="d-zone" cx="10.426%" cy="50%" r="200" mask="url(#maskZ04)" fill="none"></circle>
+                
+                        <circle id="zone403" class="d-zone" cx="10.426%" cy="50%" r="150" mask="url(#maskZ03)" fill="none"></circle>
+                
+                        <circle id="zone402" class="d-zone" cx="10.426%" cy="50%" r="100" mask="url(#maskZ02)" fill="none">
+                        </circle>
+                
+                        <circle id="zone401" class="d-zone" cx="10.426%" cy="50%" r="50" fill="none"></circle>
+                
+                        <!-- END DISTANCE CIRCLES -->
+                
+                
+                        <!-- whole court rectangle -->
+                        <rect class="court-line" width="100%" height="100%" fill="none" />
+                
+                        <!-- half court circle -->
+                        <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" />
+                
+                        <!-- 3-point arc -->
+                        <path class="court-line"
+                            d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
+                            fill="none" />
+                
+                        <!-- paint area  (old) -->
+                        <rect class="court-line" y="170" width="190" height="160" fill="none" />
+                
+                        <!-- paint area -->
+                        <!-- <path id="zone202" d="M 0 330 L 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210 L 0 170 L 190 170 L 190 330 Z"
+                                        fill="none" /> -->
+                
+                        <!-- restricted area  -->
+                        <path class="court-line" d="M 49 290 A 40 40 0 0 0 49 210" fill="none" />
+                
+                
+                        <!-- free throw circle -->
+                        <path class="court-line" d="M 190 190 A 60 60 0 0 0 190 310" fill="none" stroke-dasharray="10,10" />
+                        <path class="court-line" d="M 190 310 A 60 60 0 0 0 190 190" fill="none" />
+                
+                        <!-- board and rim -->
+                        <line class="court-line" x1="40" y1="220" x2="40" y2="280" />
+                        <circle class="court-line" cx="49" cy="250" r="9" fill="none" />
+                    </svg>
+                </div>
             </div>
         </div>
-
-        <div class="button-div">
-            <button>By Zone</button>
-            <button>By Distance</button>
-        </div>
+        <!-- END drawing of courts -->
         
     </div>
 

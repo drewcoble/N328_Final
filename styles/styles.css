@@ -12,11 +12,12 @@ body {
 }
 
 body {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url("../images/bg-image.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
@@ -88,11 +89,11 @@ select {
   height: 40px;
   width: 40px;
   border-radius: 12px;
-  /* border: 2px solid white; */
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .button-div {
-  margin-top: 35px;
+  margin: 35px 0 10px;
 }
 .button-div button {
   height: 40px;
@@ -117,11 +118,8 @@ footer {
 
 /* styles for svg and content */
 
-rect,
-circle,
-path,
-line {
-  stroke: white;
+.court-line {
+  stroke: rgba(225, 230, 240, 0.5);
   stroke-width: 2px;
 }
 
@@ -144,6 +142,8 @@ text {
   border-radius: 8px;
   background-color: #efefff;
 }
-rect {
-  /* stroke: white; */
+
+.d-zone {
+  stroke: rgba(225, 230, 240, 0.8);
+  stroke-width: 2px;
 }

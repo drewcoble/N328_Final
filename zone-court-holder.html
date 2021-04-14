@@ -1,0 +1,111 @@
+<div class="courts-wrapper">
+    <div class="court-div" id="court-one">
+        <select name="player-select-one" id="player-select-one" onchange="displayPlayer(1,value)">
+            <option>Select a player</option>
+        </select>
+        <svg id="zones-court-one" width="470" height="500">
+            <!-- whole court rectangle -->
+            <rect width="100%" height="100%" fill="none" />
+
+            <!-- above the break 3pt zone -->
+            <path id="zone107"
+                d="M138.97 500 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 138.97 0 L 470 0 L 470 500 Z"
+                fill="none" />
+
+            <!-- half court circle -->
+            <circle cx="100%" cy="50%" r="12%" fill="none" />
+
+
+            <!-- 3-point arc -->
+            <path id="zone103"
+                d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
+                fill="none" />
+
+            <!-- right corner 3   -->
+            <rect id="zone105" y="0" width="140" height="6%" fill="none" />
+
+            <!-- left corner 3   -->
+            <rect id="zone104" y="94%" width="140" height="6%" fill="none" />
+
+            <!-- paint area (old) -->
+            <!-- <rect id="zone102" y="170" width="190" height="160" fill="none" /> -->
+
+            <!-- paint area -->
+            <path id="zone102" d="M 0 330 L 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210 L 0 170 L 190 170 L 190 330 Z"
+                fill="none" />
+
+
+            <!-- restricted area -->
+            <path id="zone101" d="M 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210" fill="none" />
+
+            <!-- free throw circle -->
+            <path d="M 190 190 A 60 60 0 0 0 190 310" fill="none" stroke="rgba(255,255,255,0.75)"
+                stroke-dasharray="10,10" />
+            <path d="M 190 310 A 60 60 0 0 0 190 190" fill="none" stroke="rgba(255,255,255,0.75)" />
+
+            <!-- board and rim -->
+            <line x1="30" y1="220" x2="30" y2="280" stroke="rgba(255,255,255,0.75)" />
+            <circle cx="39" cy="250" r="9" fill="none" stroke="rgba(255,255,255,0.75)" />
+        </svg>
+    </div>
+
+    <div class="heat-key">
+        <h3>Hot</h3>
+        <div class="key-color" style="background-color: rgb(165,0,38)"></div>
+        <div class="key-color" style="background-color:rgb(244,109,67)"></div>
+        <div class="key-color" style="background-color:rgb(254,224,144)"></div>
+        <div class="key-color" style="background-color:rgb(224,243,248)"></div>
+        <div class="key-color" style="background-color:rgb(116,173,209)"></div>
+        <div class="key-color" style="background-color:rgb(49,54,149)"></div>
+        <h3>Cold</h3>
+    </div>
+
+    <div class="court-div" id="court-two">
+        <select name="player-select-two" id="player-select-two" onchange="displayPlayer(2,value)">
+            <option>Select a player</option>
+        </select>
+        <svg id="zones-court-two" width="470" height="500">
+            <!-- whole court rectangle -->
+            <rect width="100%" height="100%" fill="none" />
+
+            <!-- above the break 3pt zone -->
+            <path id="zone207"
+                d="M138.97 500 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 138.97 0 L 470 0 L 470 500 Z"
+                fill="none" />
+
+            <!-- half court circle -->
+            <circle cx="100%" cy="50%" r="12%" fill="none" stroke="rgba(255,255,255,0.75)" />
+
+
+            <!-- 3-point arc -->
+            <path id="zone203"
+                d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
+                fill="none" />
+
+            <!-- right corner 3   -->
+            <rect id="zone205" y="0" width="140" height="6%" fill="none" />
+
+            <!-- left corner 3   -->
+            <rect id="zone204" y="94%" width="140" height="6%" fill="none" />
+
+            <!-- paint area  (old) -->
+            <!-- <rect id="zone202" y="170" width="190" height="160" fill="none" /> -->
+
+            <!-- paint area -->
+            <path id="zone202" d="M 0 330 L 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210 L 0 170 L 190 170 L 190 330 Z"
+                fill="none" />
+
+            <!-- restricted area -->
+            <path id="zone201" d="M 0 290 L 40 290 A 40 40 0 0 0 40 210 L 0 210" fill="none" />
+
+            <!-- free throw circle -->
+            <path d="M 190 190 A 60 60 0 0 0 190 310" fill="none" stroke="rgba(255,255,255,0.75)"
+                stroke-dasharray="10,10" />
+            <path d="M 190 310 A 60 60 0 0 0 190 190" fill="none" stroke="rgba(255,255,255,0.75)" />
+
+            <!-- board and rim -->
+            <line x1="30" y1="220" x2="30" y2="280" stroke="rgba(255,255,255,0.75)" />
+            <circle cx="39" cy="250" r="9" fill="none" stroke="rgba(255,255,255,0.75)" />
+        </svg>
+    </div>
+</div>
