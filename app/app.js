@@ -9,40 +9,26 @@ var playersByZone = [];
 var playerSelectOne = document.getElementById("player-select-one");
 var playerSelectTwo = document.getElementById("player-select-two");
 
-function showZones() {
 
+var court1 = document.getElementById("court-one");
+var court2 = document.getElementById("court-two");
+var court3 = document.getElementById("court-three");
+var court4 = document.getElementById("court-four");
+
+function showZones() {
+    court1.style.display = 'flex';
+    court3.style.display = 'none';
+    court2.style.display = 'flex';
+    court4.style.display = 'none';
 }
 
 function showDistances() {
-
+    court1.style.display = 'none';
+    court3.style.display = 'flex';
+    court2.style.display = 'none';
+    court4.style.display = 'flex';
 }
 
-// d3.csv('../data/data_distance.csv', function(data) 
-//     {
-//         for (let i=0; i<data.length; i++)
-//         {
-//             // console.log(data[i]);
-
-//             let playerRow = data[i];
-//             playersByDistance.push(playerRow);
-            
-//             // // loop through all players
-//             // for (let y=1980; y<=2012; y++) 
-//             // {
-//             // 	let value = record[y];
-//             // 	let object = {
-//             // 		year: y,
-//             // 		production: +value
-//             // 	};
-                
-//             // 	energyProduction.push(object);
-//             // }
-
-
-//         }
-//         console.log(playersByDistance);
-//         // drawScatterPlot();
-// });
 
 d3.csv('data/data.csv', function(data) {
         for (let i=0; i<data.length; i++){

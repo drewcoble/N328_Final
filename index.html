@@ -20,15 +20,29 @@
 
     <div class="content-wrapper">
 
-        <select name="player-select-one" id="player-select-one" onchange="displayPlayer(1,value)">
-            <option>Select a player</option>
-        </select>
-        <select name="player-select-two" id="player-select-two" onchange="displayPlayer(2,value)">
-            <option>Select a player</option>
-        </select>
+        <h3>Change the view:</h3>
+        <div class="button-wrapper">    
+            <button onclick="showZones()">Show Zones</button>
+            <button onclick="showDistances()">Show Distances</button>
+        </div>
 
+        <div class="select-wrapper">
+            <div class="select-div">
+                <h3>Player 1: </h3>
+                <select name="player-select-one" id="player-select-one" onchange="displayPlayer(1,value)">
+                    <option>Select a player</option>
+                </select>
+            </div>
+            <div class="select-div">
+                <h3>Player 2: </h3>
+                <select name="player-select-two" id="player-select-two" onchange="displayPlayer(2,value)">
+                    <option>Select a player</option>
+                </select> 
+            </div>
+            
+        </div>
         <!-- START drawing of courts -->
-        <div class="courts-wrapper z-courts">
+        <div class="courts-wrapper">
 
             <!-- START courts for player 1 (LEFT SIDE) -->
             <div class="left-courts">
@@ -42,7 +56,7 @@
                                 fill="none" />
                             
                             <!-- 3-point arc -->
-                            <path id="zone103" class="court-line"
+                            <path id="zone103"
                                 d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
                                 fill="none" />
                             
@@ -66,6 +80,11 @@
 
                             <!-- half court circle -->
                             <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" />
+
+                            <!-- 3-point arc -->
+                            <path class="court-line"
+                                d="M0 470 L 140 470 A 237.5 237.5 0 0 0 140 30 L 0 30"
+                                fill="none" />
 
                             <!-- paint area -->
                             <path class="court-line" d="M 0 170 L 190 170 L 190 330 L 0 330"
@@ -303,6 +322,8 @@
             </div>
         </div>
         <!-- END drawing of courts -->
+
+
         
     </div>
 
