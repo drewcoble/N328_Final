@@ -42,6 +42,21 @@ nav {
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
+.nav-left {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+h1 {
+  margin-right: 20px;
+}
+
+.nav-left a {
+  color: white;
+  margin: 0 10px;
+}
+
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -51,7 +66,7 @@ nav {
 }
 
 .button-wrapper {
-  width: 1030px;
+  width: 790px;
   height: 30px;
   display: flex;
   justify-content: center;
@@ -69,27 +84,34 @@ nav {
   border: none;
   color: white;
   letter-spacing: 2px;
-  background-color: rgba(116, 173, 209, 0.8);
+  background-color: rgba(244, 109, 67, 0.8);
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
 .select-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 1030px;
+  width: 900px;
+  max-width: 100%;
   /* background-color: green; */
 }
 
 .select-div {
-  margin: 20px 0;
+  margin: 10px 25px;
+}
+
+.select-title {
+  margin-left: 5px;
 }
 
 .courts-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
+  /* overflow-x: scroll; */
+  margin: 0 auto;
 }
 .court-div {
   display: flex;
@@ -109,18 +131,42 @@ select {
   margin: 8px 0;
 }
 
+.heat-key-wrapper {
+  margin: 0 15px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.key-title {
+  font-size: 95%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  height: 90%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
 .heat-key {
   /* padding-top: 45px; */
-  width: 90px;
+  width: 80px;
   /* background-color: green; */
-  height: 500px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   color: white;
   letter-spacing: 2px;
+  margin: 0 5px;
 }
+
 .key-color {
   height: 40px;
   width: 40px;
@@ -150,6 +196,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   letter-spacing: 1px;
+  font-size: 80%;
 }
 
 /* styles for svg and content */

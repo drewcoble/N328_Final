@@ -13,8 +13,15 @@
 </head>
 <body>
     <nav>
-      <h1>Heat Check</h1> 
-      <p>NBA Shooting Percentages</p>
+        <div class="nav-left">
+            <h1>Heat Check</h1> 
+            <a href="documentation.html">Documentation</a>
+            <a href="">YouTube</a>
+            
+        </div>
+        <div class="nav-right">
+            <p><i>Visualizing NBA Shooting Percentages</i></p>
+        </div>
     </nav>
     
 
@@ -28,13 +35,13 @@
 
         <div class="select-wrapper">
             <div class="select-div">
-                <h3>Player 1: </h3>
+                <h3 class="select-title">Player 1: </h3>
                 <select name="player-select-one" id="player-select-one" onchange="displayPlayer(1,value)">
                     <option>Select a player</option>
                 </select>
             </div>
             <div class="select-div">
-                <h3>Player 2: </h3>
+                <h3 class="select-title">Player 2: </h3>
                 <select name="player-select-two" id="player-select-two" onchange="displayPlayer(2,value)">
                     <option>Select a player</option>
                 </select> 
@@ -48,7 +55,7 @@
             <div class="left-courts">
                 <div class="court-div" id="court-one">
                     
-                    <svg id="zones-court-one" width="470" height="500">
+                    <svg id="zones-court-one" width="350" height="500">
 
                         <!-- START shooting zones -->   
                             <!-- above the break 3pt zone -->
@@ -79,7 +86,7 @@
                             <rect class="court-line" width="100%" height="100%" fill="none" />
 
                             <!-- half court circle -->
-                            <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" />
+                            <!-- <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" /> -->
 
                             <!-- 3-point arc -->
                             <path class="court-line"
@@ -106,28 +113,28 @@
                 </div>
                 <div class="court-div" id="court-three" style="display: none">
                 
-                    <svg id="distances-court-three" width="470" height="500">
+                    <svg id="distances-court-three" width="350" height="500">
                 
                         <defs>
                             <mask id="maskZ02">
                                 <rect width="100%" height="100%" fill="white"></rect>
-                                <circle cx="10.426%" cy="50%" r="50" fill="black"></circle>
+                                <circle cx="49px" cy="50%" r="50" fill="black"></circle>
                             </mask>
                             <mask id="maskZ03">
                                 <rect width="100%" height="100%" fill="white"></rect>
-                                <circle cx="10.426%" cy="50%" r="100" fill="black"></circle>
+                                <circle cx="49px" cy="50%" r="100" fill="black"></circle>
                             </mask>
                             <mask id="maskZ04">
                                 <rect width="100%" height="100%" fill="white"></rect>
-                                <circle cx="10.426%" cy="50%" r="150" fill="black"></circle>
+                                <circle cx="49px" cy="50%" r="150" fill="black"></circle>
                             </mask>
                             <mask id="maskZ05">
                                 <rect width="100%" height="100%" fill="white"></rect>
-                                <circle cx="10.426%" cy="50%" r="200" fill="black"></circle>
+                                <circle cx="49px" cy="50%" r="200" fill="black"></circle>
                             </mask>
                             <mask id="maskZ06">
                                 <rect width="100%" height="100%" fill="white"></rect>
-                                <circle cx="10.426%" cy="50%" r="250" fill="black"></circle>
+                                <circle cx="49px" cy="50%" r="250" fill="black"></circle>
                             </mask>
                         </defs>
                 
@@ -135,16 +142,16 @@
                 
                         <rect id="zone306" width="100%" height="100%" fill="none" mask="url(#maskZ06)" />
                 
-                        <circle id="zone305" class="d-zone" cx="10.426%" cy="50%" r="250" mask="url(#maskZ05)" fill="none"></circle>
+                        <circle id="zone305" class="d-zone" cx="49px" cy="50%" r="250" mask="url(#maskZ05)" fill="none"></circle>
                 
-                        <circle id="zone304" class="d-zone" cx="10.426%" cy="50%" r="200" mask="url(#maskZ04)" fill="none"></circle>
+                        <circle id="zone304" class="d-zone" cx="49px" cy="50%" r="200" mask="url(#maskZ04)" fill="none"></circle>
                 
-                        <circle id="zone303" class="d-zone" cx="10.426%" cy="50%" r="150" mask="url(#maskZ03)" fill="none"></circle>
+                        <circle id="zone303" class="d-zone" cx="49px" cy="50%" r="150" mask="url(#maskZ03)" fill="none"></circle>
                 
-                        <circle id="zone302" class="d-zone" cx="10.426%" cy="50%" r="100" mask="url(#maskZ02)" fill="none">
+                        <circle id="zone302" class="d-zone" cx="49px" cy="50%" r="100" mask="url(#maskZ02)" fill="none">
                         </circle>
                 
-                        <circle id="zone301" class="d-zone" cx="10.426%" cy="50%" r="50" fill="none"></circle>
+                        <circle id="zone301" class="d-zone" cx="49px" cy="50%" r="50" fill="none"></circle>
                 
                         <!-- END DISTANCE CIRCLES -->
                 
@@ -153,7 +160,7 @@
                         <rect class="court-line" width="100%" height="100%" fill="none" />
                 
                         <!-- half court circle -->
-                        <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" />
+                        <!-- <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" /> -->
                 
                         <!-- 3-point arc -->
                         <path class="court-line"
@@ -182,22 +189,35 @@
                 </div>
             </div>
         
-            <div class="heat-key">
-                <h3>Hot</h3>
-                <div class="key-color" style="background-color: rgb(165,0,38)"></div>
-                <div class="key-color" style="background-color:rgb(244,109,67)"></div>
-                <div class="key-color" style="background-color:rgb(254,224,144)"></div>
-                <div class="key-color" style="background-color:rgb(224,243,248)"></div>
-                <div class="key-color" style="background-color:rgb(116,173,209)"></div>
-                <div class="key-color" style="background-color:rgb(49,54,149)"></div>
-                <h3>Cold</h3>
+            <div class="heat-key-wrapper">
+                <div class="heat-key">
+                    <h3 class='key-title'>Hot<span style='font-size:70%'>(90th %)</span></h3>
+                    <div class="key-color" style="background-color: rgb(165,0,38)"></div>
+                    <div class="key-color" style="background-color:rgb(244,109,67)"></div>
+                    <div class="key-color" style="background-color:rgb(254,224,144)"></div>
+                    <div class="key-color" style="background-color:rgb(224,243,248)"></div>
+                    <div class="key-color" style="background-color:rgb(116,173,209)"></div>
+                    <div class="key-color" style="background-color:rgb(49,54,149)"></div>
+                    <h3 class='key-title'>Cold<span style='font-size:70%'>(10th %)</span></h3>
+                </div>
+                <div class="divider"></div>
+                <div class="heat-key">
+                    <h3 class='key-title'>250+<span style='font-size:70%'>Attempts</span></h3>
+                    <div class="key-color" style="background-color: rgba(165,0,38, 1)"></div>
+                    <div class="key-color" style="background-color:rgba(165,0,38, 0.8)"></div>
+                    <div class="key-color" style="background-color:rgba(165,0,38, 0.6)"></div>
+                    <div class="key-color" style="background-color:rgba(165,0,38, 0.4)"></div>
+                    <div class="key-color" style="background-color:rgba(165,0,38, 0.2)"></div>
+                    <div class="key-color" style="background-color:rgba(165,0,38, 0)"></div>
+                    <h3 class='key-title'>0<span style='font-size:70%'>Attempts</span></h3>
+                </div>
             </div>
         
             <!-- START courts for player 2 (RIGHT SIDE) -->
             <div class="right-courts">
                 <div class="court-div" id="court-two">
                     
-                    <svg id="zones-court-two" width="470" height="500">
+                    <svg id="zones-court-two" width="350" height="500">
                         <!-- whole court rectangle -->
                         <rect class="court-line" width="100%" height="100%" fill="none" />
             
@@ -207,11 +227,15 @@
                             fill="none" />
             
                         <!-- half court circle -->
-                        <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none"/>
+                        <!-- <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none"/> -->
             
-            
-                        <!-- 3-point arc -->
+                        <!-- 3-point line -->
                         <path id="zone203" class="court-line"
+                            d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79"
+                            fill="none" />
+
+                        <!-- 3-point area -->
+                        <path id="zone203"
                             d="M0 470.2 L 138.97 470.2 A 237.5 237.5 0 0 0 138.97 29.79 L 0 29.79 L 0 170 L 190 170 L 190 330 L 0 330 Z"
                             fill="none" />
             
@@ -221,8 +245,10 @@
                         <!-- left corner 3   -->
                         <rect id="zone204" y="94%" width="140" height="6%" fill="none" />
             
-                        <!-- paint area  (old) -->
+                        <!-- paint area line -->
                         <!-- <rect id="zone202" y="170" width="190" height="160" fill="none" /> -->
+                        <path class='court-line' d="M 0 330 L 190 330 L 190 170 L 0 170"
+                            fill="none" />
             
                         <!-- paint area -->
                         <path id="zone202" d="M 0 330 L 0 290 L 49 290 A 40 40 0 0 0 49 210 L 0 210 L 0 170 L 190 170 L 190 330 Z"
@@ -245,9 +271,9 @@
                 </div>
                 <div class="court-div" id="court-four" style="display: none">
                 
-                    <svg id="distances-court-four" width="470" height="500">
+                    <svg id="distances-court-four" width="350" height="500">
                 
-                        <defs>
+                        <!-- <defs>
                             <mask id="maskZ02">
                                 <rect width="100%" height="100%" fill="white"></rect>
                                 <circle cx="10.426%" cy="50%" r="50" fill="black"></circle>
@@ -268,22 +294,22 @@
                                 <rect width="100%" height="100%" fill="white"></rect>
                                 <circle cx="10.426%" cy="50%" r="250" fill="black"></circle>
                             </mask>
-                        </defs>
+                        </defs> -->
                 
                         <!-- START DISTANCE CIRCLE OVERLAYS -->
                 
                         <rect id="zone406" width="100%" height="100%" fill="none" mask="url(#maskZ06)" />
                 
-                        <circle id="zone405" class="d-zone" cx="10.426%" cy="50%" r="250" mask="url(#maskZ05)" fill="none"></circle>
+                        <circle id="zone405" class="d-zone" cx="49px" cy="50%" r="250" mask="url(#maskZ05)" fill="none"></circle>
                 
-                        <circle id="zone404" class="d-zone" cx="10.426%" cy="50%" r="200" mask="url(#maskZ04)" fill="none"></circle>
+                        <circle id="zone404" class="d-zone" cx="49px" cy="50%" r="200" mask="url(#maskZ04)" fill="none"></circle>
                 
-                        <circle id="zone403" class="d-zone" cx="10.426%" cy="50%" r="150" mask="url(#maskZ03)" fill="none"></circle>
+                        <circle id="zone403" class="d-zone" cx="49px" cy="50%" r="150" mask="url(#maskZ03)" fill="none"></circle>
                 
-                        <circle id="zone402" class="d-zone" cx="10.426%" cy="50%" r="100" mask="url(#maskZ02)" fill="none">
+                        <circle id="zone402" class="d-zone" cx="49px" cy="50%" r="100" mask="url(#maskZ02)" fill="none">
                         </circle>
                 
-                        <circle id="zone401" class="d-zone" cx="10.426%" cy="50%" r="50" fill="none"></circle>
+                        <circle id="zone401" class="d-zone" cx="49px" cy="50%" r="50" fill="none"></circle>
                 
                         <!-- END DISTANCE CIRCLES -->
                 
@@ -292,7 +318,7 @@
                         <rect class="court-line" width="100%" height="100%" fill="none" />
                 
                         <!-- half court circle -->
-                        <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" />
+                        <!-- <circle class="court-line" cx="100%" cy="50%" r="12%" fill="none" /> -->
                 
                         <!-- 3-point arc -->
                         <path class="court-line"
