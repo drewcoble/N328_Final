@@ -3,8 +3,9 @@ var CHART_HEIGHT = 200;
 
 var MAX_BAR_HEIGHT = 100;
 
-var playersByDistance = [];
-var playersByZone = [];
+var players = [];
+var selectedTeamOne = "";
+var selectedTeamTwo = "";
 
 var playerSelectOne = document.getElementById("player-select-one");
 var playerSelectTwo = document.getElementById("player-select-two");
@@ -29,36 +30,66 @@ function showDistances() {
     court4.style.display = 'flex';
 }
 
+function teamSelect(side, team) {
+    if (side == 'left') {
+        selectedTeamOne = team;
+        populateSelects('left');
+    }
+    else if (side == 'right') {
+        selectedTeamTwo = team;
+        populateSelects('right');
+    }
+}
+
 
 d3.csv('data/data.csv', function(data) {
-        for (let i=0; i<data.length; i++){
-            // console.log(data[i]);
-            let playerRow = data[i];
-            playersByZone.push(playerRow);
-
-            //add the player to the select
-            let opt1 = document.createElement("option");
-            opt1.value = i;
-            opt1.innerHTML = playerRow.PLAYER;
-            playerSelectOne.appendChild(opt1);
-            let opt2 = document.createElement("option");
-            opt2.value = i;
-            opt2.innerHTML = playerRow.PLAYER;
-            playerSelectTwo.appendChild(opt2);
-        }
-        console.log(playersByZone);
-        // drawCourtWithZones(playersByZone[9]);
+    for (let i=0; i<data.length; i++){
+        // console.log(data[i]);
+        let playerRow = data[i];
+        players.push(playerRow);
+    }
+    populateSelects('both');
+    console.log(players);
+    // drawCourtWithZones(playersByZone[9]);
 });
 
+function populateSelects(side) {
+
+    if (side == 'left') {
+        playerSelectOne.innerHTML = "<option>Select a player</option>";
+        // playerSelectOne.value = '';
+    }
+    if (side == 'right') {
+        playerSelectTwo.innerHTML = "<option>Select a player</option>";
+        // playerSelectTwo.value = '';
+    }
+
+    for (let i=0; i<players.length; i++){
+    //add the player to the select
+        if ((side == 'left' || side == 'both') && (selectedTeamOne == "" || selectedTeamOne == players[i].TEAM)) {
+            let opt1 = document.createElement("option");
+            opt1.value = i;
+            opt1.innerHTML = players[i].PLAYER;
+            playerSelectOne.appendChild(opt1);
+        }
+
+        if ((side == 'right' || side == 'both') && (selectedTeamTwo == "" || selectedTeamTwo == players[i].TEAM)) {
+            let opt2 = document.createElement("option");
+            opt2.value = i;
+            opt2.innerHTML = players[i].PLAYER;
+            playerSelectTwo.appendChild(opt2);
+        }
+    }
+}
 
 
 function displayPlayer(courtNum, val) {
     // console.log(val);
     if (courtNum < 3) {
-        drawCourtWithZones(courtNum, playersByZone[val]);
+        drawCourtWithZones(courtNum, players[val]);
     }
     else {
-        drawCourtWithDistances(courtNum, playersByDistance[val])
+        drawCourtWithDistances(courtNum, players[val])
     }
 }
 

@@ -11,25 +11,67 @@
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
 </head>
-<body>
+<div>
     <nav>
         <div class="nav-left">
             <h1>Heat Check</h1>
-            <p>NBA Shooting Percentages</p>
-        </div>
-        <div class="nav-right">
             <a href="index.html">Visualization</a>
             <a href="">YouTube</a>
+    
+        </div>
+        <div class="nav-right">
+            <p><i>Visualizing NBA Shooting Percentages</i></p>
         </div>
     </nav>
 
-<div class="content-wrapper"></div>
+<div class="content-wrapper">
 
+    <div class="doc-section">
+        <h3>The Design Process:</h3>
+        <p>
+            My initial intent with this visualization was to get an idea of which players were better at shooting from certain areas of the basketball court. Obviously, I would need to display a basketball court on the page, so this was the first thing I started working on.
+        </p>
+        <p>
+            When I found the data set on NBA.com, it was split into two different versions. The first was shooting percentages from each traditional zone on the court (restricted area, inside paint, outside paint, corner three, above the break three). The second was by distance, with intervals of five feet.
+        </p>
+        <p>
+            My first design was to visualize the shooting percentages by the natural zones on the court. This is the first view you see on the site. I got the different colors to appear based on which player was selected, but quickly realized this approach was somewhat flawed. The problem was that a low-volume player might have a much higher percentage from a particular zone on the court than a high-volume player. That would make this visualization misleading.
+        </p>
+        <p>
+            I decided the best solution was to add the opacity to each zone corresponding with the number of shots from the zone. This allows the user to quickly determine the importance of the percentage from this zone. It also approximates the overall volume of shots the player takes in general, which was an unintended benefit of adding the opacity. 
+        </p>
+        <p>
+            Once the first part of the visualization was working to my satisfaction, I implemented the same functionality to the second part, showing shooting percentages by distance from the rim. In order to do this I needed to draw the same basketball courts on the page, but add a layer of circles representing each of the new zones.
+        </p>
+    </div>
 
+    <div class="to-do-list">
+        <h3>To-Do List (DELETE BEFORE SUBMITTING ASSIGNMENT):</h3>
+        <br>
+        <ol>
+            <li>Add display of # of attempts & percentage from area on mouse-over</li>
+            <li>Finish documentation.</li>
+            <li>Record screen capture of demonstration.</li>
+            <li>Upload video to YouTube & add link to navbar</li>
+        </ol>
+    </div>
 
+    <ul>
+        <li>Your design process: How did you go about designing the visualization? What are some of the initial designs / ideas you
+        attempted in the beginning? A good way to document your design process is to scan your sketches and include them in the
+        documentation page.
+        </li>
+        <li>Rationale of your design choices: This should be a rigorous explanation of the design choices you made. For example, why
+        did you use color to encode a particular variable? Why did you arrange your charts in a particular way?</li>
+        <li>Describe how you used your visualizations to discover facts or answer questions you had. Include evidence to support
+        your findings as screenshots from the visualization.</li>
+    </ul>
 
+    
+</div>
 
-
+    
+    
 
 
     <footer>

@@ -27,21 +27,100 @@
 
     <div class="content-wrapper">
 
-        <h3>Change the view:</h3>
-        <div class="button-wrapper">    
-            <button onclick="showZones()">Show Zones</button>
-            <button onclick="showDistances()">Show Distances</button>
+        <div class="filter-wrapper">
+            
+            <div class="button-wrapper">
+                <h3>Change the view:</h3> 
+                <button onclick="showZones()">Show Zones</button>
+                <button onclick="showDistances()">Show Distances</button>
+            </div>
+
         </div>
 
         <div class="select-wrapper">
+
             <div class="select-div">
-                <h3 class="select-title">Player 1: </h3>
+                <div class="team-filter-one">
+                    <h3 class='select-title'>Team: </h3>
+                    <select name="team-select-one" id="team-select-one" onchange="teamSelect('left', value)">
+                        <option value="">Entire NBA</option>
+                        <option value="ATL">Atlanta Hawks</option>
+                        <option value="BKN">Brooklyn Nets</option>
+                        <option value="BOS">Boston Celtics</option>
+                        <option value="CHA">Charlotte Hornets</option>
+                        <option value="CHI">Chicago Bulls</option>
+                        <option value="CLE">Cleveland Cavaliers</option>
+                        <option value="DAL">Dallas Mavericks</option>
+                        <option value="DEN">Denver Nuggets</option>
+                        <option value="DET">Detroit Pistons</option>
+                        <option value="GSW">Golden State Warriors</option>
+                        <option value="HOU">Houston Rockets</option>
+                        <option value="IND">Indiana Pacers</option>
+                        <option value="LAC">Los Angeles Clippers</option>
+                        <option value="LAL">Los Angeles Lakers</option>
+                        <option value="MEM">Memphis Grizzlies</option>
+                        <option value="MIA">Miami Heat</option>
+                        <option value="MIL">Milwaukee Bucks</option>
+                        <option value="MIN">Minnesota Timberwolves</option>
+                        <option value="NOP">New Orleans Pelicans</option>
+                        <option value="NYK">New York Knicks</option>
+                        <option value="OKC">Oklahoma City Thunder</option>
+                        <option value="ORL">Orlando Magic</option>
+                        <option value="PHI">Philadelphia 76ers</option>
+                        <option value="PHX">Phoenix Suns</option>
+                        <option value="POR">Portland Trail Blazers</option>
+                        <option value="SAC">Sacramento Kings</option>
+                        <option value="SAS">San Antonio Spurs</option>
+                        <option value="TOR">Toronto Raptors</option>
+                        <option value="UTA">Utah Jazz</option>
+                        <option value="WAS">Washington Wizards</option>
+                    </select>
+                </div>
+
+                <h3 class="select-title">Player: </h3>
                 <select name="player-select-one" id="player-select-one" onchange="displayPlayer(1,value)">
                     <option>Select a player</option>
                 </select>
+
             </div>
             <div class="select-div">
-                <h3 class="select-title">Player 2: </h3>
+                <div class="team-filter-two">
+                    <h3 class='select-title'>Team: </h3>
+                    <select name="team-select-two" id="team-select-two" onchange="teamSelect('right', value)">
+                        <option value="">Entire NBA</option>
+                        <option value="ATL">Atlanta Hawks</option>
+                        <option value="BKN">Brooklyn Nets</option>
+                        <option value="BOS">Boston Celtics</option>
+                        <option value="CHA">Charlotte Hornets</option>
+                        <option value="CHI">Chicago Bulls</option>
+                        <option value="CLE">Cleveland Cavaliers</option>
+                        <option value="DAL">Dallas Mavericks</option>
+                        <option value="DEN">Denver Nuggets</option>
+                        <option value="DET">Detroit Pistons</option>
+                        <option value="GSW">Golden State Warriors</option>
+                        <option value="HOU">Houston Rockets</option>
+                        <option value="IND">Indiana Pacers</option>
+                        <option value="LAC">Los Angeles Clippers</option>
+                        <option value="LAL">Los Angeles Lakers</option>
+                        <option value="MEM">Memphis Grizzlies</option>
+                        <option value="MIA">Miami Heat</option>
+                        <option value="MIL">Milwaukee Bucks</option>
+                        <option value="MIN">Minnesota Timberwolves</option>
+                        <option value="NOP">New Orleans Pelicans</option>
+                        <option value="NYK">New York Knicks</option>
+                        <option value="OKC">Oklahoma City Thunder</option>
+                        <option value="ORL">Orlando Magic</option>
+                        <option value="PHI">Philadelphia 76ers</option>
+                        <option value="PHX">Phoenix Suns</option>
+                        <option value="POR">Portland Trail Blazers</option>
+                        <option value="SAC">Sacramento Kings</option>
+                        <option value="SAS">San Antonio Spurs</option>
+                        <option value="TOR">Toronto Raptors</option>
+                        <option value="UTA">Utah Jazz</option>
+                        <option value="WAS">Washington Wizards</option>
+                    </select>
+                </div>
+                <h3 class="select-title">Player: </h3>
                 <select name="player-select-two" id="player-select-two" onchange="displayPlayer(2,value)">
                     <option>Select a player</option>
                 </select> 
