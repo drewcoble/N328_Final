@@ -12,17 +12,22 @@ body {
 }
 
 body {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  background: linear-gradient(
+      to top,
+      rgba(240, 240, 245, 0.6),
+      rgba(240, 240, 245, 0.6)
+    ),
     url("../images/bg-image.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: black;
 }
 
 nav {
+  position: fixed;
   padding: 0 30px;
   letter-spacing: 2px;
   display: flex;
@@ -32,14 +37,14 @@ nav {
   width: 100%;
   background: linear-gradient(
     to right,
-    rgba(165, 0, 38, 0.8),
-    rgba(244, 109, 67, 0.8) 20%,
-    rgba(254, 224, 144, 0.8) 40%,
-    rgba(224, 243, 248, 0.8) 60%,
-    rgba(116, 173, 209, 0.8) 80%,
-    rgba(49, 54, 149, 0.8) 100%
+    rgba(165, 0, 38, 0.95),
+    rgba(244, 109, 67, 0.95) 20%,
+    rgba(254, 224, 144, 0.95) 40%,
+    rgba(224, 243, 248, 0.95) 60%,
+    rgba(116, 173, 209, 0.95) 80%,
+    rgba(49, 54, 149, 0.95) 100%
   );
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-left {
@@ -58,22 +63,43 @@ h1 {
 }
 
 .content-wrapper {
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100% - 100px);
+  min-height: calc(100% - 50px);
+}
+
+.doc-title {
+  margin: 30px 0 20px;
+  width: 80%;
+  /* background-color: green; */
 }
 
 .doc-section {
   width: 80%;
-  margin: 20px 0;
-  background-color: green;
+  margin: 0 0 20px;
+  background-color: rgba(240, 240, 250, 0.8);
+  box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.3);
+  max-height: 500px;
+  overflow-x: auto;
+  padding: 10px 20px 20px;
+  border-radius: 12px;
 }
 
 .doc-section p {
   margin-top: 10px;
   line-height: 150%;
+}
+
+.doc-section p img {
+  border-radius: 12px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 550px;
+  min-width: 350px;
+  height: auto;
 }
 
 ul {
@@ -93,8 +119,13 @@ ul li {
   margin: 10px 0 20px 0;
 }
 
+.button-wrapper h3 {
+  width: auto;
+  /* text-align: right; */
+}
+
 .button-wrapper button {
-  margin: 0 10px;
+  margin: 0 0 0 15px;
   width: 200px;
   height: 30px;
   border-radius: 12px;
@@ -103,8 +134,8 @@ ul li {
   border: none;
   color: white;
   letter-spacing: 2px;
-  background-color: rgba(244, 109, 67, 0.8);
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.6);
+  background-color: rgba(244, 109, 67, 0.9);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .select-wrapper {
@@ -132,6 +163,12 @@ ul li {
   /* overflow-x: scroll; */
   margin: 0 auto;
 }
+
+svg {
+  border: rgba(0, 0, 10, 0.9) solid 1px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 .court-div {
   display: flex;
   flex-direction: column;
@@ -168,8 +205,8 @@ select {
 
 .divider {
   height: 90%;
-  width: 1px;
-  background-color: rgba(255, 255, 255, 0.5);
+  width: 2px;
+  background-color: rgba(0, 0, 10, 0.5);
 }
 
 .heat-key {
@@ -181,7 +218,7 @@ select {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  color: white;
+  /* color: white; */
   letter-spacing: 2px;
   margin: 0 5px;
 }
@@ -190,7 +227,7 @@ select {
   height: 40px;
   width: 40px;
   border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(0, 0, 10, 0.5);
 }
 
 .button-div {
@@ -203,14 +240,16 @@ select {
   border: none;
   border-radius: 12px;
   margin: 0 10px;
-  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 3px 5px 10px rgba(0, 0, 10, 0.6);
   cursor: pointer;
   font-size: 16px;
 }
 
 footer {
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 10, 0.8);
+  box-shadow: -3px -5px 10px rgba(0, 0, 0, 0.3);
+  color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -221,7 +260,7 @@ footer {
 /* styles for svg and content */
 
 .court-line {
-  stroke: rgba(225, 230, 240, 0.5);
+  stroke: rgba(0, 0, 10, 0.9);
   stroke-width: 2px;
 }
 
@@ -232,7 +271,7 @@ text {
 .axis path,
 .axis line {
   fill: none;
-  stroke: white;
+  stroke: green;
   shape-rendering: crispEdges;
 }
 .tick text {
@@ -246,6 +285,6 @@ text {
 }
 
 .d-zone {
-  stroke: rgba(225, 230, 240, 0.8);
+  stroke: rgba(100, 100, 110, 0.4);
   stroke-width: 2px;
 }

@@ -26,8 +26,9 @@
 
 <div class="content-wrapper">
 
+    <h3 class='doc-title'>The Design Process:</h3>
     <div class="doc-section">
-        <h3>The Design Process:</h3>
+        
         <p>
             My initial intent with this visualization was to get an idea of which players were better at shooting from certain areas of the basketball court. Obviously, I would need to display a basketball court on the page, so this was the first thing I started working on.
         </p>
@@ -43,29 +44,51 @@
         <p>
             Once the first part of the visualization was working to my satisfaction, I implemented the same functionality to the second part, showing shooting percentages by distance from the rim. In order to do this I needed to draw the same basketball courts on the page, but add a layer of circles representing each of the new zones.
         </p>
+        <p>
+            Lastly, I added buttons to switch the view in order to not overwhelm the user with too much at one time. Additionally, I made the player selection easier by giving the user the ability to select a team to choose a player from.
+        </p>
     </div>
 
-    <div class="to-do-list">
+    <h3 class="doc-title">Design Choices:</h3>
+    <div class="doc-section">
+        <p>
+            The color scheme of the data was an important design choice. I decided to make the highest shooting percentages a dark red color and the lowest shooting percentages a dark blue color. These colors are typically associated with being 'hot' or 'cold', so this color scheme makes a lot of sense.
+        </p>
+        <p>
+            I mentioned the opacity of the shooting zones above, but would also like to mention them here. The opacity corrensponds with the number of attempts a player has from the area. This makes it easier to spot volume and percentage at the same time and make an easy judgment on what the data says.
+        </p>
+        <p>
+            I decided to make the page have two courts side-by-side in order to be able to compare two different players easily. If this was not the case, it would be nearly impossible to make these player comparisons, so this was an important design decision.
+        </p>
+        <p>
+            I also touched on the 'zones' versus 'distances' display modes above. Since my data set had this data, I decided to have both available. However, when they were both on the page at the same time, there was too much going on. I added the buttons to switch which one is on the screen to simplify the view and not overload the user's eyes.
+        </p>
+    </div>
+
+    <h3 class="doc-title">Exploring the Data:</h3>
+    <div class="doc-section">
+        <p>
+            This data visualization was very interesting to explore. For instance, most NBA fans believe that Stephen Curry and Damian Lillard are neck and neck when it comes to shooting, but when the data is displayed side-by-side you can see a difference. Steph is still the best.
+            <br>
+            <img src="images/Screenshot1.png">
+        </p>
+        <br>
+        <p>
+            Here I compared the two young stars on the Celtics, Jaylen Brown and Jayson Tatum. The data shows that Jaylen Brown has shot better from the field, even though they have a very similar usage. This means that maybe Brown should be getting more shots.
+            <br>
+            <img src="images/Screenshot2.png">
+        </p>
+    </div>
+
+    <!-- <div class="to-do-list">
         <h3>To-Do List (DELETE BEFORE SUBMITTING ASSIGNMENT):</h3>
         <br>
         <ol>
             <li>Add display of # of attempts & percentage from area on mouse-over</li>
-            <li>Finish documentation.</li>
             <li>Record screen capture of demonstration.</li>
             <li>Upload video to YouTube & add link to navbar</li>
         </ol>
-    </div>
-
-    <ul>
-        <li>Your design process: How did you go about designing the visualization? What are some of the initial designs / ideas you
-        attempted in the beginning? A good way to document your design process is to scan your sketches and include them in the
-        documentation page.
-        </li>
-        <li>Rationale of your design choices: This should be a rigorous explanation of the design choices you made. For example, why
-        did you use color to encode a particular variable? Why did you arrange your charts in a particular way?</li>
-        <li>Describe how you used your visualizations to discover facts or answer questions you had. Include evidence to support
-        your findings as screenshots from the visualization.</li>
-    </ul>
+    </div> -->
 
     
 </div>

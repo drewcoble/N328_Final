@@ -49,7 +49,7 @@ d3.csv('data/data.csv', function(data) {
         players.push(playerRow);
     }
     populateSelects('both');
-    console.log(players);
+    // console.log(players);
     // drawCourtWithZones(playersByZone[9]);
 });
 
